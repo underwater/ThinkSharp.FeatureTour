@@ -13,6 +13,9 @@
     
     <!-- Application Icon -->
     <ApplicationIcon>Images\Icon.ico</ApplicationIcon>
+    
+    <!-- Enable Telerik RadCallout support -->
+    <UseTelerik>true</UseTelerik>
   </PropertyGroup>
 
   <ItemGroup>

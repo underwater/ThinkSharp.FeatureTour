@@ -53,6 +53,35 @@
                     featureTouring:TourHelper.ElementID="{x:Static app:ElementID.ButtonOverView}"
                     featureTouring:TourHelper.Placement="RightCenter"/>
 
+            <Separator Margin="5,20,5,5"/>
+            
+            <TextBlock Text="Callout Implementation" FontWeight="Bold" FontSize="14" Margin="5" HorizontalAlignment="Center"/>
+            
+            <Button Content="Use Default Callout" 
+                    Command="{Binding CmdUseDefaultCallout}"
+                    Background="#E0E0E0"/>
+            
+            <Button Content="Use Telerik Callout" 
+                    Command="{Binding CmdUseTelerikCallout}"
+                    Background="#E0E0E0"/>
+            
+            <TextBlock Text="{Binding CurrentCalloutType, StringFormat='Current: {0}'}" 
+                       Margin="5" 
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center"
+                       FontSize="10"
+                       FontStyle="Italic"/>
+
+            <Separator Margin="5,20,5,5"/>
+            
+            <TextBlock Text="Tour Recorder" FontWeight="Bold" FontSize="14" Margin="5" HorizontalAlignment="Center"/>
+            
+            <Button Content="🎥 Record New Tour" 
+                    Command="{Binding CmdStartRecording}"
+                    Background="#FF5722"
+                    Foreground="White"
+                    ToolTip="Click elements to record tour steps"/>
+
         </StackPanel>
 
         <StackPanel Grid.Column="2" Margin="10"

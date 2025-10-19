@@ -35,6 +35,10 @@
     <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(UseTelerik)' == 'true'">
+    <DefineConstants>$(DefineConstants);TELERIK_AVAILABLE</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="Thinksharp.FeatureTour.nuspec">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
@@ -52,6 +56,12 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="ThinkSharp.FeatureTour.Test" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Optional Telerik dependency - only needed if using TelerikCalloutControlFactory -->
+    <!-- Using the latest available from local source: 2025.1.211 -->
+    <PackageReference Include="Telerik.UI.for.Wpf.AllControls.Xaml" Version="2025.1.211" Condition="'$(UseTelerik)' == 'true'" />
   </ItemGroup>
 
 </Project>

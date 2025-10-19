@@ -166,7 +166,11 @@ namespace ThinkSharp.FeatureTouring
 
                 myPopup = new Popup();
                 myPopup.AllowsTransparency = true;
-                myPopup.Child = new TourControl();
+                
+                // Use the configured factory to create the callout control
+                var calloutControl = TourConfiguration.CalloutControlFactory.CreateCalloutControl();
+                myPopup.Child = calloutControl;
+                
                 (myPopup.Child as FrameworkElement).DataContext = myViewModel;
                 myPopup.Placement = PlacementMode.Custom;
                 myPopup.CustomPopupPlacementCallback += CustomPopupPlacementCallback;

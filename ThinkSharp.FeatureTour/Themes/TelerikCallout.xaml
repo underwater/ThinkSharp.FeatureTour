@@ -1,0 +1,12 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- This file will contain Telerik-specific styling when TELERIK_AVAILABLE is defined -->
+    <!-- The actual RadCallout styling will be handled by Telerik's theme system -->
+    
+    <!-- Note: When using Telerik callouts, you should also merge Telerik's theme resources -->
+    <!-- Example: <ResourceDictionary Source="/Telerik.Windows.Themes.Fluent;component/Themes/System.Windows.xaml"/> -->
+    
+</ResourceDictionary>
+

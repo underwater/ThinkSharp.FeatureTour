@@ -7,6 +7,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ThinkSharp.FeatureTouring.Navigation;
 using ThinkSharp.FeatureTouring.Touring;
+using ThinkSharp.FeatureTouring.Recording;
 
 namespace ThinkSharp.FeatureTouring
 {
@@ -20,6 +21,10 @@ namespace ThinkSharp.FeatureTouring
         private ICommand? _cmdStartOverView;
         private ICommand? _cmdOpenDialog;
         private ICommand? _cmdClear;
+        private ICommand? _cmdUseDefaultCallout;
+        private ICommand? _cmdUseTelerikCallout;
+        private ICommand? _cmdStartRecording;
+        private string _currentCalloutType = "Default TourControl";
         private Placement _placement;
         private int _colorSchemaIndex;
         private int _tabIndex;
@@ -183,6 +188,72 @@ namespace ThinkSharp.FeatureTouring
             }
         }
 
+        public ICommand CmdUseDefaultCallout
+        {
+            get
+            {
+                if (_cmdUseDefaultCallout == null)
+                {
+                    _cmdUseDefaultCallout = new RelayCommand(() =>
+                    {
+                        TourConfiguration.UseDefaultCallout();
+                        CurrentCalloutType = TourConfiguration.CalloutControlFactory.ImplementationName;
+                    });
+                }
+                return _cmdUseDefaultCallout;
+            }
+        }
+
+        public ICommand CmdUseTelerikCallout
+        {
+            get
+            {
+                if (_cmdUseTelerikCallout == null)
+                {
+                    _cmdUseTelerikCallout = new RelayCommand(() =>
+                    {
+                        try
+                        {
+                            TourConfiguration.UseTelerikCallout();
+                            CurrentCalloutType = TourConfiguration.CalloutControlFactory.ImplementationName;
+                        }
+                        catch (InvalidOperationException ex)
+                        {
+                            System.Windows.MessageBox.Show(ex.Message, "Telerik Not Available", 
+                                System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Warning);
+                        }
+                    });
+                }
+                return _cmdUseTelerikCallout;
+            }
+        }
+
+        public ICommand CmdStartRecording
+        {
+            get
+            {
+                if (_cmdStartRecording == null)
+                {
+                    _cmdStartRecording = new RelayCommand(() =>
+                    {
+                        try
+                        {
+                            var recorderWindow = new TourRecorderWindow(System.Windows.Application.Current.MainWindow);
+                            recorderWindow.Show();
+                        }
+                        catch (System.Exception ex)
+                        {
+                            System.Windows.MessageBox.Show($"Error starting recorder: {ex.Message}", 
+                                "Recording Error", 
+                                System.Windows.MessageBoxButton.OK, 
+                                System.Windows.MessageBoxImage.Error);
+                        }
+                    });
+                }
+                return _cmdStartRecording;
+            }
+        }
+
 
         // Properties
 
@@ -229,6 +300,12 @@ namespace ThinkSharp.FeatureTouring
         }
 
         public PopupStyle PopupStyle => myPopupStyle;
+
+        public string CurrentCalloutType
+        {
+            get { return _currentCalloutType; }
+            set { SetProperty(ref _currentCalloutType, value); }
+        }
 
         public static MainWindowViewModel Instance { get; } = new MainWindowViewModel();
     }
