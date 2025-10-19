@@ -21,28 +21,25 @@ namespace ThinkSharp.FeatureTouring
         {
             myElement = new WeakReference(element);
         }
-#endif
-
-#if NET45
+#else
         private readonly WeakReference<FrameworkElement> myElement;
         public VisualElement(FrameworkElement element)
         {
             myElement = new WeakReference<FrameworkElement>(element);
-
         }
 #endif
 
-        public string ElementID { get; set; }
+        public string ElementID { get; set; } = string.Empty;
         public Placement Placement { get; set; }
         public WindowTransisionBehavior WindowTransisionBehavior { get; set; }
         public Guid WindowID { get; set; }
 
-        public DataTemplate GetTemplate(string name)
+        public DataTemplate? GetTemplate(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
                 return null;
 
-            FrameworkElement element;
+            FrameworkElement? element;
             if (TryGetElement(out element))
             {
                 var template = element.TryFindResource(name) as DataTemplate;
@@ -54,14 +51,12 @@ namespace ThinkSharp.FeatureTouring
             return null;
         }
 
-        public bool TryGetElement(out FrameworkElement element)
+        public bool TryGetElement(out FrameworkElement? element)
         {
 #if NET40
             element = myElement.Target as FrameworkElement;
             return myElement.IsAlive;
-#endif
-
-#if NET45
+#else
             return myElement.TryGetTarget(out element);
 #endif
         }

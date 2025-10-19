@@ -4,18 +4,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using GalaSoft.MvvmLight;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace ThinkSharp.FeatureTouring.Touring
 {
-    public class CustomizeHeaderViewModel : ViewModelBase
+    public class CustomizeHeaderViewModel : ObservableObject
     {
         private string _header = "My Header";
 
         public string Header
         {
             get { return _header; }
-            set { Set("Header", ref _header, value); }
+            set { SetProperty(ref _header, value); }
         }
     }
 }
