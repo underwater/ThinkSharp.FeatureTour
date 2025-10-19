@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    
+    <!-- Assembly Information -->
+    <RootNamespace>LedgerVue.FeatureTouring</RootNamespace>
+    <AssemblyName>LedgerVue.FeatureTouring.Demo</AssemblyName>
+    
+    <!-- Application Icon -->
+    <ApplicationIcon>Images\Icon.ico</ApplicationIcon>
+    
+    <!-- Enable Telerik RadCallout support -->
+    <UseTelerik>true</UseTelerik>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.1" />
+    <PackageReference Include="log4net" Version="3.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LedgerVue.FeatureTour\LedgerVue.FeatureTour.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\ExampleImage.png" />
+    <Resource Include="Images\Icon.ico" />
+  </ItemGroup>
+
+</Project>

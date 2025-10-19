@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    
+    <!-- Assembly Information -->
+    <RootNamespace>LedgerVue.FeatureTouring</RootNamespace>
+    <AssemblyName>LedgerVue.FeatureTour</AssemblyName>
+    <AssemblyTitle>FeatureTour - Enhance your WPF applications with interactive Tutorials!</AssemblyTitle>
+    <Description>A C# WPF component for creating interactive feature tours for your application.</Description>
+    <Company>LedgerVue</Company>
+    <Product>LedgerVue.FeatureTour</Product>
+    <Copyright>Copyright (c) 2017 ML Labs</Copyright>
+    <Version>1.0.0.0</Version>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    
+    <!-- Documentation -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\LedgerVue.FeatureTour.xml</DocumentationFile>
+    
+    <!-- Build Configuration -->
+    <DefineConstants>$(DefineConstants);NET80</DefineConstants>
+    
+    <!-- NuGet Package Information -->
+    <PackageId>LedgerVue.FeatureTour</PackageId>
+    <PackageProjectUrl>https://github.com/JanDotNet/LedgerVue.FeatureTour</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JanDotNet/LedgerVue.FeatureTour</RepositoryUrl>
+    <PackageTags>c# wpf feature tour product tour</PackageTags>
+    <PackageLicenseFile>LICENSE.TXT</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <DefineConstants>$(DefineConstants);TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(UseTelerik)' == 'true'">
+    <DefineConstants>$(DefineConstants);TELERIK_AVAILABLE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="LedgerVue.FeatureTour.nuspec">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Tools\LicenseActivator.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tools\LicenseActivator.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="LedgerVue.FeatureTour.Test" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Optional Telerik dependency - only needed if using TelerikCalloutControlFactory -->
+    <!-- Using the latest available from local source: 2025.1.211 -->
+    <PackageReference Include="Telerik.UI.for.Wpf.AllControls.Xaml" Version="2025.1.211" Condition="'$(UseTelerik)' == 'true'" />
+  </ItemGroup>
+
+</Project>

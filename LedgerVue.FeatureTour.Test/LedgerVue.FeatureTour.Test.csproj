@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    
+    <!-- Assembly Information -->
+    <RootNamespace>LedgerVue.FeatureTouring.Test</RootNamespace>
+    <AssemblyName>LedgerVue.FeatureTour.Test</AssemblyName>
+    
+    <!-- Strong Name Signing -->
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSTest.TestFramework" Version="3.6.3" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.6.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LedgerVue.FeatureTour\LedgerVue.FeatureTour.csproj" />
+  </ItemGroup>
+
+</Project>

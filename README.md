@@ -1,12 +1,12 @@
-# ThinkSharp.FeatureTour
+# LedgerVue.FeatureTour
 
-[![Build status](https://ci.appveyor.com/api/projects/status/l3aagqmbfmgxwv3t?svg=true)](https://ci.appveyor.com/project/JanDotNet/thinksharp-featuretour)
-[![NuGet](https://img.shields.io/nuget/v/ThinkSharp.FeatureTour.svg)](https://www.nuget.org/packages/ThinkSharp.FeatureTour/) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.TXT)
+[![Build status](https://ci.appveyor.com/api/projects/status/l3aagqmbfmgxwv3t?svg=true)](https://ci.appveyor.com/project/JanDotNet/LedgerVue-featuretour)
+[![NuGet](https://img.shields.io/nuget/v/LedgerVue.FeatureTour.svg)](https://www.nuget.org/packages/LedgerVue.FeatureTour/) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.TXT)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MSBFDUU5UUQZL)
 
 ## 🎯 Introduction
 
-**ThinkSharp.FeatureTour** is a powerful WPF component for creating **interactive product tours** that guide users through your application's features. 
+**LedgerVue.FeatureTour** is a powerful WPF component for creating **interactive product tours** that guide users through your application's features. 
 
 ### ✨ Key Features
 
@@ -52,7 +52,7 @@ The **easiest way** to create tours:
 
 ```bash
 # Run the demo
-dotnet run --project ThinkSharp.FeatureTour.Demo
+dotnet run --project LedgerVue.FeatureTour.Demo
 ```
 
 1. Click **"🎥 Record New Tour"**
@@ -93,12 +93,12 @@ tour.Start();
 
 ### Via NuGet
 ```
-      Install-Package ThinkSharp.FeatureTour
+      Install-Package LedgerVue.FeatureTour
 ```
 
 ### Via Project Reference
 ```xml
-<ProjectReference Include="path\to\ThinkSharp.FeatureTour\ThinkSharp.FeatureTour.csproj" />
+<ProjectReference Include="path\to\LedgerVue.FeatureTour\LedgerVue.FeatureTour.csproj" />
 ```
 
 ### Optional: Telerik Callout Support
@@ -137,7 +137,7 @@ The **Tour Recorder** is the fastest way to create product tours. Instead of wri
 #### 1. Add Recorder to Your App
 
 ```csharp
-using ThinkSharp.FeatureTouring.Recording;
+using LedgerVue.FeatureTouring.Recording;
 
 // In your ViewModel
 public ICommand CmdStartRecording => new RelayCommand(() =>
@@ -379,7 +379,7 @@ public class IntroductionTour : ITourDefinition
 ### 3. Set Element IDs in XAML
 
 ```xaml
-<Window xmlns:tour="clr-namespace:ThinkSharp.FeatureTouring;assembly=ThinkSharp.FeatureTour"
+<Window xmlns:tour="clr-namespace:LedgerVue.FeatureTouring;assembly=LedgerVue.FeatureTour"
         xmlns:local="clr-namespace:YourApp.Tours">
     
     <DataGrid tour:TourHelper.ElementID="{x:Static local:ElementIDs.AccountsGrid}"
@@ -410,7 +410,7 @@ public ICommand CmdStartTour => new RelayCommand(() =>
 
 ### How It Works
 
-ThinkSharp.FeatureTour uses **element-based positioning**, NOT pixel coordinates:
+LedgerVue.FeatureTour uses **element-based positioning**, NOT pixel coordinates:
 
 ✅ **No pixel coordinates** - Tours adapt to any screen resolution  
 ✅ **Auto-resizing** - Callouts follow elements when window resizes  
@@ -668,15 +668,15 @@ new Step("SaveButton", "Save Button", "This is the save button.")
 
 ### Full Documentation
 
-Browse the [FeatureTour Wiki](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wiki) for detailed API documentation:
+Browse the [FeatureTour Wiki](https://github.com/JanDotNet/LedgerVue.FeatureTour/wiki) for detailed API documentation:
 
-- [Popup Placement](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wiki/Popup-Placement)
-- [Tour Definition](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wiki/Tour-Definition)
-- [Tour Navigation](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wiki/Tour-Navigation)
-- [Styling](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wiki/Styling)
-- [Templating](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wiki/Templating)
-- [Localization](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wiki/Localization)
-- [Logging](https://github.com/JanDotNet/ThinkSharp.FeatureTour/wiki/Logging)
+- [Popup Placement](https://github.com/JanDotNet/LedgerVue.FeatureTour/wiki/Popup-Placement)
+- [Tour Definition](https://github.com/JanDotNet/LedgerVue.FeatureTour/wiki/Tour-Definition)
+- [Tour Navigation](https://github.com/JanDotNet/LedgerVue.FeatureTour/wiki/Tour-Navigation)
+- [Styling](https://github.com/JanDotNet/LedgerVue.FeatureTour/wiki/Styling)
+- [Templating](https://github.com/JanDotNet/LedgerVue.FeatureTour/wiki/Templating)
+- [Localization](https://github.com/JanDotNet/LedgerVue.FeatureTour/wiki/Localization)
+- [Logging](https://github.com/JanDotNet/LedgerVue.FeatureTour/wiki/Logging)
 
 ---
 
@@ -686,7 +686,7 @@ FeatureTour is released under [The MIT license (MIT)](LICENSE.TXT)
 
 ## 🏷️ Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For available versions, see the [tags on this repository](https://github.com/JanDotNet/ThinkSharp.FeatureTour/tags). 
+We use [SemVer](http://semver.org/) for versioning. For available versions, see the [tags on this repository](https://github.com/JanDotNet/LedgerVue.FeatureTour/tags). 
 
 ## ☕ Donation
 
@@ -698,7 +698,7 @@ If you like FeatureTour and use it in your projects, feel free to buy me a cup o
 
 ## 🎓 Example: Complete Tour System
 
-See the [Demo Application](https://github.com/JanDotNet/ThinkSharp.FeatureTour/tree/master/ThinkSharp.FeatureTour.Demo) for a complete working example showing:
+See the [Demo Application](https://github.com/JanDotNet/LedgerVue.FeatureTour/tree/master/LedgerVue.FeatureTour.Demo) for a complete working example showing:
 
 - ✅ Tour Recorder in action
 - ✅ Multiple tour definitions
@@ -710,11 +710,11 @@ See the [Demo Application](https://github.com/JanDotNet/ThinkSharp.FeatureTour/t
 
 **Run the demo:**
 ```bash
-git clone https://github.com/JanDotNet/ThinkSharp.FeatureTour.git
-cd ThinkSharp.FeatureTour
-dotnet run --project ThinkSharp.FeatureTour.Demo
+git clone https://github.com/JanDotNet/LedgerVue.FeatureTour.git
+cd LedgerVue.FeatureTour
+dotnet run --project LedgerVue.FeatureTour.Demo
 ```
 
 ---
 
-**Made with ❤️ by the ThinkSharp team**
+**Made with ❤️ by the LedgerVue team**

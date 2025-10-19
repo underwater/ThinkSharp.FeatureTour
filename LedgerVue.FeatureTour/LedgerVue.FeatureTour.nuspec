@@ -1,0 +1,34 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>LedgerVue.FeatureTour</id>
+    <version>1.0.0</version>
+    <title>LedgerVue.FeatureTour</title>
+    <authors>ML Labs</authors>
+    <owners>ML Labs</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/JanDotNet/LedgerVue.FeatureTour</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A C# WPF component for creating interactive feature tours for your application.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2025</copyright>
+    <tags>c# wpf feature tour product tour</tags>
+    <dependencies>
+      <dependency id="Extended.Wpf.Toolkit" version="4.6.1" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="PresentationCore" targetFramework="" />
+      <frameworkAssembly assemblyName="PresentationFramework" targetFramework="" />
+      <frameworkAssembly assemblyName="WindowsBase" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Xaml" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework="" />
+    </frameworkAssemblies>
+    <contentFiles>
+      <files include="any/any/Images/icon.png" buildAction="None" copyToOutput="false" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="bin\Release\net8.0-windows\LedgerVue.FeatureTour.dll" target="lib\net8.0-windows\LedgerVue.FeatureTour.dll" />
+    <file src="bin\Release\net8.0-windows\LedgerVue.FeatureTour.xml" target="lib\net8.0-windows\LedgerVue.FeatureTour.xml" />
+  </files>
+</package>
